@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
    s.add_development_dependency 'mocha'
    #s.add_development_dependency 'rb-fsevent'
    #s.add_development_dependency 'growl_notify'
+   s.add_development_dependency 'rake'
    s.add_development_dependency 'simplecov'
    
    s.add_runtime_dependency "nokogiri"
