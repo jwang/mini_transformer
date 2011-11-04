@@ -1,4 +1,4 @@
-Mini Transformer - [![Build Status](https://secure.travis-ci.org/jwang/mini_transformer.png)](http://travis-ci.org/jwang/mini_transformer)
+# Mini Transformer - [![Build Status](https://secure.travis-ci.org/jwang/mini_transformer.png)](http://travis-ci.org/jwang/mini_transformer)
 
 # Description
 Wed Oct 26 18:14:16 PDT 2011
