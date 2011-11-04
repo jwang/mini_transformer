@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Book id="23">
+  <Introduction>
+    <Para>This book describes some common User Interface elements.</Para>
+    <Para>Use standard elements in favor of custom elements.
+          Do not create custom elements without a good reason.</Para>
+  </Introduction>
+  <KeyList>
+    <Name>Standard symbols for use in menus</Name>
+    <KeyLabel>Symbol</KeyLabel>
+    <DescriptionLabel>Meaning</DescriptionLabel>
+    <Entries>
+       <Entry>
+          <KeyName>✓</KeyName>
+          <Description>In the Window menu, the active document; in other menus, a setting that applies to the entire selection</Description>
+      </Entry>
+      <Entry>
+        <KeyName>–</KeyName>
+        <Description>A setting that applies to only part of the selection</Description>
+      </Entry>
+      <Entry>
+        <KeyName>•</KeyName>
+        <Description>A window with unsaved changes (typically, when Auto Save is not available)</Description>
+      </Entry>
+    </Entries>
+  </KeyList>
+</Book>
