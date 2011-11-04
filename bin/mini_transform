@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'mini_transformer'
+
+begin
+  require "mini_transformer/cli"
+  MiniTransformer::CLI.start
+end
