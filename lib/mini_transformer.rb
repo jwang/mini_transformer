@@ -143,7 +143,7 @@ module MiniTransformer
       
       # Realign the meta tag that is added by the XSLT transform
       html = html.gsub(/<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=UTF-8\">\s+$/, '    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">')
-      html = html.gsub(/<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=UTF-8\">/, '    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">')
+      html = html.gsub(/UTF-8/, 'utf-8')
       # Save the HTML file
       if @output
         File.open(@output, "w") { |f| f << html }
