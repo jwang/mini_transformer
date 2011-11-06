@@ -10,7 +10,6 @@ module MiniTransformer
         'id'    => self.id,
         'introduction' => self.introduction,
         "key-list" => self.key_list.to_json
-        
       }.to_json(*a)
     end
 

@@ -89,12 +89,22 @@ module MiniTransformer
     end
 
     def to_json
-      JSON.pretty_generate @book
+      json = JSON.pretty_generate @book
+      # Save the JSON file
+      if @output
+        File.open(@output, "w") { |f| f << json }
+      else
+        if @book.uid.nil?
+          File.open("output.json", "w") { |f| f << json }
+        else
+          File.open("#{@book.uid}.json", "w") { |f| f << json }
+        end
+      end
     end
 
     def to_html
       html = MiniTransformer::generate_html(@book, @mapping)
-      
+
       # Save the HTML file
       if @output
         File.open(@output, "w") { |f| f << html }
