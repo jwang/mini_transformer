@@ -11,5 +11,14 @@ describe "Entry" do
       @entry.respond_to?(:key_name).should be_true
       @entry.respond_to?(:description).should be_true
     end
+    
+    it "should convert to JSON" do
+      @entry = MiniTransformer::Entry.new
+      @entry.key_name = "-"
+      @entry.description = "A setting that applies to only part of the selection"
+      json = @entry.to_json
+      expect { JSON.parse json }.to_not raise_error(JSON::JSONError)
+    end
+    
   end
 end
