@@ -59,21 +59,21 @@
       </ul>
 
       <h2>Install</h2>
-      <p>gem install mini_transformer</p>
+      <p><pre>gem install mini_transformer</pre></p>
       
       <h2>Usage</h2>
-      <p>mini_transform transform [JSON, XML, OUTPUT, FORMAT, MAPPING]<br />
+      <p><pre>mini_transform transform [JSON, XML, OUTPUT, FORMAT, MAPPING]</pre><br />
         Requires the input.json and input.xml, if neither is provided or found, a File Not Found error will occur.<br />
       Optionally takes an output file name such as output.html<br />
       Optionally takes 2 different output format, html or json. Defaults to html format for output.<br />
       Optionally takes a YAML mapping configuration file for the entries XML tags to convert to HTML tags. Only available for html output format</p>
       
       <h4>Examples:</h4>
-      <p>mini_transform transform input.json, input.xml<br />
-      mini_transform transform input.json, input.xml, out.json, json<br />
-      mini_transform transform input.json, input.xml, nil, json<br />
-      mini_transform transform input.json, input.xml, out.html, html, mapping.yml<br />
-      mini_transform transform input.json, input.xml, nil, html, mapping.yml</p>
+      <p><pre>mini_transform transform input.json, input.xml</pre><br />
+      <pre>mini_transform transform input.json, input.xml, out.json, json</pre><br />
+      <pre>mini_transform transform input.json, input.xml, nil, json</pre><br />
+      <pre>mini_transform transform input.json, input.xml, out.html, html, mapping.yml</pre><br />
+      <pre>mini_transform transform input.json, input.xml, nil, html, mapping.yml</pre></p>
 
       <h2>License</h2>
       <p>Copyright (&copy;) 2011 John Wang, http://johntwang.com<br />
