@@ -12,9 +12,9 @@ module MiniTransformer
       @parser.setup(json, xml, output, format)
       @parser.validate
       @parser.parse
-      
+
       if format == "json"
-        puts @parser.to_json
+        @parser.to_json
       else
         @parser.to_html
       end
