@@ -7,25 +7,34 @@ Mini Transformer takes a pair of input files, JSON and XML, then converts it to 
 `gem install mini_transformer`
 
 ## Usage
-
+`mini_transform transform [input.json, input.xml, output.html, format, mapping.yml]`
+Requires the input.json and input.xml, if neither is provided or found, a File Not Found error will occur.  
+Optionally takes an output file name such as output.html  
+Optionally takes 2 different output format, html or json. Defaults to html format for output.  
+Optionally takes a YAML mapping configuration file for the entries XML tags to convert to HTML tags. Only available for html output format
 
 ## Dependencies
-* Nokogiri
+* [Nokogiri](nokogiri.org)
 * ActiveSupport
-* JSON
-* Thor
+* [JSON](http://flori.github.com/json)
+* [Thor](https://github.com/wycats/thor)
 
 ### Development Dependencies
-* RSpec
-* guard
-* guard-rspec
-* simplecov
+* [RSpec 2](https://www.relishapp.com/rspec)
+* [guard](https://github.com/guard/guard)
+* [guard-rspec](https://github.com/guard/guard-rspec)
+* [simplecov](https://github.com/colszowka/simplecov)
 * rb-fsevent (Mac OSX only)
-* growl_notify (Mac OSX only)
+* [growl_notify (Mac OSX only)](https://github.com/scottdavis/growl_notify)
 
 ### Additional Information
 * [Test Coverage](http://johntwang.com/mini_transformer/coverage)
 * [Travis CI Build Status](http://travis-ci.org/jwang/mini_transformer)
+
+
+#### Known Issues
+* Ruby 1.8.7 alphabetizes the meta tags. Meaning :id and :content are swapped when written to file.
+
 
 ## MIT License
 Copyright (c) 2011 John Wang, http://johntwang.com

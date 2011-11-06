@@ -2,7 +2,7 @@ module MiniTransformer
   class CLI < Thor
     include Thor::Actions
     
-    desc "transform [input.json, input.xml, output.html, format, mapping.yml]", "Transform the files into format"
+    desc "transform [JSON, XML, OUTPUT, FORMAT, MAPPING]", "Transform the files into format"
     def transform(json, xml, output=nil, format="html", mapping=nil)
       if output.nil?
         output = "#{Dir.pwd}/test.html"
@@ -20,8 +20,8 @@ module MiniTransformer
       end
       
     end
-    map %w(-t --tranform) => :tranform
-    
+    map %w(-t --transform) => :transform
+
     desc "version", "Prints the bundler's version information"
     def version
       puts "Mini Transform version #{MiniTransformer::VERSION}"
