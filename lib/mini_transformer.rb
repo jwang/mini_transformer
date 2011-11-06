@@ -14,17 +14,17 @@ require "mini_transformer/entry"
 module MiniTransformer
   # Your code goes here...
   class Parser
-    def setup(json_input_file, xml_input_file, output=nil, format="html", mapping=nil)
-      if File.exists?(xml_input_file) && File.exists?(json_input_file)
-        xml_input_file = File.open(xml_input_file)
-        json_input = File.open(json_input_file)
+    def setup(json_input_filename, xml_input_filename, output=nil, format="html", mapping=nil)
+      if File.exists?(xml_input_filename) && File.exists?(json_input_filename)
+        xml_input_file = File.open(xml_input_filename)
+        json_input = File.open(json_input_filename)
         json_contents = ""
         json_input.each do |line|
           json_contents = json_contents + line
         end
         json_data = JSON.parse json_contents
-        
-        if File.extname(xml_input_file) == ".xml"
+
+        if File.extname(xml_input_filename) == ".xml"
           @document = Nokogiri::XML(xml_input_file, nil, 'UTF-8')
         end
       else
@@ -36,6 +36,12 @@ module MiniTransformer
         @output = output
       end
 
+      if mapping.nil?
+        @mapping = Hash.new
+        #@mapping[:para] => "p"
+        #@mapping[:introduction] => "header"
+        #@mapping[:entries] => "dl"
+      end
       @book = Book.new
       @book.key_list = KeyList.new
 
@@ -82,6 +88,9 @@ module MiniTransformer
       end
     end
 
+    def to_json
+      JSON.pretty_generate @book
+    end
 
     def to_html
       builder = Nokogiri::HTML::Builder.new(:encoding => 'UTF-8') do |doc|
