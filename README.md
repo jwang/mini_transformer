@@ -9,7 +9,7 @@ Mini Transformer takes a pair of input files, JSON and XML, then converts it to 
 ## Usage
 `mini_transform transform [JSON, XML, OUTPUT=nil, FORMAT=html, MAPPING=nil]`
 
-Requires the input.json and input.xml, if neither is provided or found, a File Not Found error will occur.
+Requires the json and xml file names, if neither is provided or found, a File Not Found error will occur.
 
 #### Options
 * An output file name such as output.html. Defaults to UID tag or output if not available.
