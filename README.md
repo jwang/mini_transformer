@@ -17,16 +17,16 @@ Requires the input.json and input.xml, if neither is provided or found, a File N
 * A YAML mapping configuration file for the entries tags to convert to HTML tags. Only available for html output format. Defaults to dt and dd tags.
 
 #### Example Usage
-`mini_transform transform input.json, input.xml`
-`mini_transform transform input.json, input.xml, out.json, json`
-`mini_transform transform input.json, input.xml, nil, json`
-`mini_transform transform input.json, input.xml, out.html, html, mapping.yml`
+`mini_transform transform input.json, input.xml`  
+`mini_transform transform input.json, input.xml, out.json, json`  
+`mini_transform transform input.json, input.xml, nil, json`  
+`mini_transform transform input.json, input.xml, out.html, html, mapping.yml`  
 `mini_transform transform input.json, input.xml, nil, html, mapping.yml`
 
 #### Configuration
-Example Mapping YAML - mapping.yml
-`entries: dl
-key-name: dt
+Example Mapping YAML - mapping.yml  
+`entries: dl  
+key-name: dt  
 key-description: dd`
 
 ## Dependencies
