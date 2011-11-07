@@ -7,11 +7,27 @@ Mini Transformer takes a pair of input files, JSON and XML, then converts it to 
 `gem install mini_transformer`
 
 ## Usage
-`mini_transform transform [input.json, input.xml, output.html, format, mapping.yml]`
-Requires the input.json and input.xml, if neither is provided or found, a File Not Found error will occur.  
-Optionally takes an output file name such as output.html  
-Optionally takes 2 different output format, html or json. Defaults to html format for output.  
-Optionally takes a YAML mapping configuration file for the entries XML tags to convert to HTML tags. Only available for html output format
+`mini_transform transform [JSON, XML, OUTPUT=nil, FORMAT=html, MAPPING=nil]`
+
+Requires the input.json and input.xml, if neither is provided or found, a File Not Found error will occur.
+
+#### Options
+* An output file name such as output.html. Defaults to UID tag or output if not available.
+* 2 different output formats supported, html or json. Defaults to html.
+* A YAML mapping configuration file for the entries tags to convert to HTML tags. Only available for html output format. Defaults to dt and dd tags.
+
+#### Example Usage
+`mini_transform transform input.json, input.xml`
+`mini_transform transform input.json, input.xml, out.json, json`
+`mini_transform transform input.json, input.xml, nil, json`
+`mini_transform transform input.json, input.xml, out.html, html, mapping.yml`
+`mini_transform transform input.json, input.xml, nil, html, mapping.yml`
+
+#### Configuration
+Example Mapping YAML - mapping.yml
+`entries: dl
+key-name: dt
+key-description: dd`
 
 ## Dependencies
 * [Nokogiri](nokogiri.org)
