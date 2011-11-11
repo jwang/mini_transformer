@@ -24,7 +24,7 @@ module Spec
         v == true ? " --#{k}" : " --#{k} #{v}" if v
       end.join
 
-      cmd = "#{Gem.ruby} -I#{lib} #{mini_transform} #{cmd}#{args}"
+      cmd = "#{Gem.ruby} -I\"#{lib}\" \"#{mini_transform}\" \"#{cmd}\"#{args}"
       #p "cmd: #{cmd}"
       if exitstatus
         sys_status(cmd)
